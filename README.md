@@ -39,7 +39,7 @@ Note: The csv file contains several columns like official name, currency etc. In
  Note: The comparison takes place in the function 'check_country_value'. It takes unique country name, obtains the corresponding values from the sheet and the API responses and then compares them togeather.
  Edge cases where the country name argument is not present in the sheet has been added(This includes incorrect country names as well). 
 
-#### • A pytest mark has been added to each of the test function to enable continent wise run.
+#### • 3 pytest marks("asia", "europe", "africa") has been added to each of the test function to enable continent wise run.
 
 Note: Multiple marks can be added here. Added only region to suit the requirement 
 
@@ -69,11 +69,14 @@ Once all the dependencies are installed, execute all the test by running the com
 #### pytest
 
 Execute selective tests by running,
-#### pytest -v -m asia (for only Asia)
+#### pytest -v -m asia -s (for only Asia)
 
-#### pytest -v -q --collect-only -m "asia or africa" (for either Asia or Africa)
+#### pytest -v -q --collect-only -m "asia or africa" -s (for either Asia or Africa)
+Similarly, use the mark "europe" to run for Europe.
 
 You should see the output generated in the terminal.
+Remove the stdout collector by removing the -s from the above commands. 
+Remove the verbose by removing the -v from the above commands
 
 ### Notes
 
